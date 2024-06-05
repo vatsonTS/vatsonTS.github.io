@@ -1,0 +1,184 @@
+
+html {
+    scroll-behavior: smooth;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
+    width: 91%;
+    height: 4.8vw;
+    margin: 1vw auto;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    font-family: Cygre;
+    font-size: 1.5vw;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 2.5vw;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
+}
+
+nav ul li a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+nav ul li a:active::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+.logo{
+    margin: auto 0px;
+    width: auto;
+    height: 3.5vw;
+}
+
+.logo img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.projectContainer{
+    margin-top: 2vw;
+    margin-left: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectContainerText{
+    width: 91%;
+    margin: auto;
+    font-family: Cygre;
+    font-size: 7.5vw;
+    padding-bottom: 1vw;
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
+    margin-bottom: 2vw;
+}
+
+.about{
+    width: 91%;
+    margin: auto;
+    margin-top: 4vw;
+    font-family: Cygre;
+    font-size: 7.5vw;
+}
+
+.aboutText{
+    padding-bottom: 1vw;
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
+}
+
+.Inform{
+    margin-top: 1.2vw;
+    padding-bottom: 1.2vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5vw;
+    font-family: Cygre;
+}
+
+.InformEmpty{
+    width: 30%;
+    height: auto;
+}
+
+.InformLeft{
+    width: 70%;
+    height: auto;
+}
+
+.InformLeft p{
+    margin-top: 1vw;
+}
+
+.info{
+    margin-top: 2vw;
+}
+
+.info p{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
+}
+
+.archImg{
+    margin: auto;
+    width: 91%;
+    height: 26vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.archImg image{
+    width: 22%;
+    height: auto;
+}
+
+.footer{
+    margin: 4vw auto;
+    width: 91%;
+    height: auto;
+    font-family: Cygre;
+    font-size: 1.2vw;
+    border-top: 0.3vw solid rgb(0, 0, 0);
+}
+
+.footerText{
+    margin-top: 1.2vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.backButton{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 96.5%;
+    top: 92.5%;
+    width: 2.5vw;
+    height: 3.5vw;
+}
+
+.backButton img{
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+}
