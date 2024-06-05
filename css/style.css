@@ -1,5 +1,4 @@
-
-  html {
+ html {
     scroll-behavior: smooth;
   }
 
@@ -20,38 +19,45 @@
     margin: 1vw auto;
 }
 
-.menuText{
-    margin: auto 0px;
-    width: 60%;
+nav{
     display: flex;
     align-items: center;
     justify-content: space-between;  
     font-family: Cygre;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
 }
 
-.about p a{
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 2.5vw;
+}
+
+nav ul li a{
     text-decoration: none;
     color: black;
+    position: relative;
 }
 
-.about p :hover,  .services p :hover,  .contacts p :hover, .portfolio p :hover{
-    color: rgb(134, 134, 134);
+nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
 }
 
-.services p a{
-    text-decoration: none;
-    color: black;
+nav ul li a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
 }
 
-.portfolio p a{
-    text-decoration: none;
-    color: black;
-}
-
-.contacts p a{
-    text-decoration: none;
-    color: black;
+nav ul li a:active::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
 }
 
 .logo{
@@ -136,6 +142,10 @@
     cursor: pointer;
 }
 
+.constAll a :active{
+    color: rgb(134, 134, 134);
+}
+
 .constAll a :hover{
     color: rgb(134, 134, 134);
 }
@@ -190,32 +200,29 @@
 }
 
 .picWorkArch{
+    width: 100%;
+    height: auto;
     margin-top: 1.2vw;
     padding-bottom: 1.2vw;
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.picWorkArchSlider{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 400%;
     height: auto;
-    border-bottom: 0.3vw solid rgb(0, 0, 0);
+    position: relative;
+    left: 0;
 }
 
-.picWorkArchLeft{
-    width: 49%;
-    height: auto;
-}
-
-.picWorkArchLeft img{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.picWorkArchRight{
-    width: 49%;
+.picWorkArchSliderImg{
+    width: 50%;
     height: auto;
 }
 
-.picWorkArchRight img{
+.picWorkArchSliderImg img{
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -236,8 +243,6 @@
 .servicesContainer{
     width: 100%;
     height: auto;
-    display: flex;
-    justify-content: space-between;
     font-family: Cygre;
     margin-top: 1.2vw;
     padding-bottom: 1.2vw;
@@ -248,106 +253,199 @@
 
 .buildingArchitect{
     width: 23%;
-    height: auto;
+    height: 32vw;
     text-align: left;
 }
 
+.buildingArchitect:hover .buildingArchitectFront {
+    transform: perspective(600px) rotateY(-180deg);
+}  
+
+.buildingArchitect:hover .back {
+    transform: perspective(600px) rotateY(0);
+}
+
+.buildingArchitectFront,
+.designInteriorFront,
+.landscapeDesignFront,
+.restorationFront,
+.back{
+  width: 100%;
+  height: 100%;  
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.5s ease;
+  background-color: rgb(227, 227, 227);
+}
+
+.buildingArchitectFront {
+    transform: perspective(600px) rotateY(0);
+}
+
+.back {
+    transform: perspective(600px) rotateY(180deg);
+    position: relative;
+    top: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1vw;
+}
+
+.price a{
+    margin-left: 1vw;
+    text-decoration: none;
+    color:black;
+    position: relative;
+    font-size: 2vw;
+}
+
+.price a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
+}
+
+.price a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+.price a:active::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
 .buildingArchitect h1{
+    margin-left: 1vw;
     margin-top: 1vw;
     font-size: 2vw;
 }
 
 .buildingArchitect p{
+    margin: auto 1vw;
     margin-top: 1vw;
     font-size: 1.2vw;
 }
 
-.buildingArchitect img{
+.buildingArchitectFront img{
     object-fit: cover;
-    height: auto;
     width: 100%;
+    height: 32vw;
 }
 
 .designInterior{
     width: 23%;
-    height: auto;
+    height: 32vw;
     text-align: left;
 }
 
+.designInterior:hover .designInteriorFront {
+    transform: perspective(600px) rotateY(-180deg);
+}  
+
+.designInterior:hover .back {
+    transform: perspective(600px) rotateY(0);
+}
+
+.designInteriorFront {
+    transform: perspective(600px) rotateY(0);
+}
+
 .designInterior h1{
+    margin-left: 1vw;
     margin-top: 1vw;
     font-size: 2vw;
 }
 
 .designInterior p{
+    margin: auto 1vw;
     margin-top: 1vw;
     font-size: 1.2vw;
 }
 
-.designInterior img{
+.designInteriorFront img{
     object-fit: cover;
-    height: auto;
     width: 100%;
+    height: 32vw;
 }
 
 .landscapeDesign{
     width: 23%;
-    height: auto;
+    height: 32vw;
     text-align: left;
 }
 
+.landscapeDesign:hover .landscapeDesignFront {
+    transform: perspective(600px) rotateY(-180deg);
+}  
+
+.landscapeDesign:hover .back {
+    transform: perspective(600px) rotateY(0);
+}
+
+.landscapeDesignFront {
+    transform: perspective(600px) rotateY(0);
+}
+
 .landscapeDesign h1{
+    margin-left: 1vw;
     margin-top: 1vw;
     font-size: 2vw;
 }
 
 .landscapeDesign p{
+    margin: auto 1vw;
     margin-top: 1vw;
     font-size: 1.2vw;
 }
 
-.landscapeDesign img{
+.landscapeDesignFront img{
     object-fit: cover;
-    height: auto;
     width: 100%;
+    height: 32vw;
 }
 
 .restoration{
     width: 23%;
-    height: auto;
+    height: 32vw;
     text-align: left;
 }
 
+.restoration:hover .restorationFront {
+    transform: perspective(600px) rotateY(-180deg);
+}  
+
+.restoration:hover .back {
+    transform: perspective(600px) rotateY(0);
+}
+
+.restorationFront {
+    transform: perspective(600px) rotateY(0);
+}
+
 .restoration h1{
+    margin-left: 1vw;
     margin-top: 1vw;
     font-size: 2vw;
 }
 
 .restoration p{
+    margin: auto 1vw;
     margin-top: 1vw;
     font-size: 1.2vw;
 }
 
-.restoration img{
+.restorationFront img{
     object-fit: cover;
-    height: auto;
     width: 100%;
-}
-
-.backButton{
-    position: fixed;
-    display: flex;
-    align-items: center;
-    left: 96.5%;
-    top: 92.5%;
-    width: 2.5vw;
-    height: 3.5vw;
-}
-
-.backButton img{
-    object-fit: cover;
-    height: auto;
-    width: 100%;
+    height: 32vw;
 }
 
 .portfolioContainer{
@@ -499,11 +597,127 @@
     font-size: 3vw;
 }
 
+.archInfo a, .interInfo a, .restoreInfo a, .landInfo a, .arch2Info a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.archInfo a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
+}
+
+.interInfo a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
+}
+
+.restoreInfo a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
+}
+
+.landInfo a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
+}
+
+.arch2Info a::after{
+    content: "";
+    width: 0%;
+    height: 0.15vw;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: -0.5vw;
+    transition: 0.7s;
+}
+
+.archInfo a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+.interInfo a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+.restoreInfo a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+.landInfo a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+.arch2Info a:hover::after{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
 .archInfoMore p, .interInfoMore p, .restoreInfoMore p, .landInfoMore p, .arch2InfoMore p{
     color: rgb(0, 0, 0);
     font-size: 1.2vw;
     white-space: nowrap;
 }
+
+.startProject{
+    margin-top: 1.2vw;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.startProjectWrapper {
+    display: flex;
+}
+  
+.startProjectItem {
+    font-family: Cygre;
+    font-size: 4vw;
+    color: rgb(200, 200, 200);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0 2vw;
+    animation: startProject 5s linear infinite;
+}
+  
+@keyframes startProject {
+    0% {
+      transform: translateZ(0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
 
 .askUsContainer{
     margin: auto;
@@ -577,6 +791,10 @@
     color: rgb(134, 134, 134);
 }
 
+.buttonSend :active{
+    color: rgb(134, 134, 134);
+}
+
 .form__send-result{
     margin-top: 1.2vw;
     text-align: center;
@@ -588,6 +806,63 @@
     font-family: Cygre;
     font-size: 7.5vw;
 }
+
+.faqContainer{
+    margin: auto;
+    width: 91%;
+    height: auto;
+    margin-top: 4vw;
+    padding-bottom: 1.2vw;
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
+}
+
+.faqContainerText{
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
+    font-family: Cygre;
+    font-size: 7.5vw;
+}
+
+.accordion {
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    font-family: Cygre;
+    font-size: 3vw;
+    width: 100%;
+    height: 5vw;
+    padding: 2.5vw 1vw;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .active,
+  .accordion:hover {
+    background-color: #e3e3e3;
+  }
+  
+  .pannel {
+    overflow: hidden;
+    display: none;
+    padding: 1vw;
+  }
+
+  .pannel p {
+    color: rgba(0, 0, 0, 0.7);
+    font-family: Cygre;
+    font-size: 2vw;
+  }
+  
+  .faq {
+    margin-top: 1.2vw;
+  }
+
+  .accordion i {
+    font-size: 2vw;
+  }
+  
 
 .contactsContainer{
     margin: auto;
@@ -662,4 +937,20 @@
     margin-top: 1.2vw;
     display: flex;
     justify-content: space-between;
+}
+
+.backButton{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 96.5%;
+    top: 92.5%;
+    width: 2.5vw;
+    height: 3.5vw;
+}
+
+.backButton img{
+    object-fit: cover;
+    height: auto;
+    width: 100%;
 }
