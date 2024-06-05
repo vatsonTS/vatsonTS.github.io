@@ -1,4 +1,3 @@
-
 html {
     scroll-behavior: smooth;
   }
@@ -10,7 +9,7 @@ html {
     user-select: none;
 }
 
-.menu{
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -152,7 +151,7 @@ nav ul li a:active::after{
     height: auto;
 }
 
-.footer{
+footer{
     margin: 4vw auto;
     width: 91%;
     height: auto;
