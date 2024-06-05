@@ -83,3 +83,43 @@ async function sendEmailTelegram(event) {
         formBtn.textContent = 'SEND FORM';
     }
 }
+
+var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          this.parentElement.classList.toggle("active");
+
+          var pannel = this.nextElementSibling;
+
+          if (pannel.style.display === "block") {
+            pannel.style.display = "none";
+          } else {
+            pannel.style.display = "block";
+          }
+        });
+      }
+
+const sliderLineAbout = document.querySelector('.picWorkArchSlider');
+        
+let offset2 = 0;
+
+setInterval(() => {
+     nextSlide()
+}, 2000);
+      
+function nextSlide() {
+    offset2 = offset2 - 100;
+    sliderLineAbout.style.transition = 'all 1s ease 0s'
+    console.log(offset2);
+    if(offset2 < - 200) {
+        setTimeout(function(){
+            offset2 = 0
+            sliderLineAbout.style.transition = 'none'
+            sliderLineAbout.style.left = offset2 + '%'
+        },1000)
+    }
+    sliderLineAbout.style.left = offset2 + '%'
+}
